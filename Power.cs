@@ -176,16 +176,16 @@ namespace power
 
         void UpdateDisplay(ReactorData reactorData, BatteryData batteryData)
         {
-            panel.WriteText($"Reactor status: {(reactorData.status ? "on" : "off")}\n");
-            panel.WriteText($"Reactor count:  {reactorData.count}\n", true);
-            panel.WriteText($"Reactor power:  {reactorData.power} MW\n", true);
-            panel.WriteText($"Uranium:        {reactorData.uraniumAmount:0.##} kg\n", true);
-            panel.WriteText($"Auto mode:       {(autoMode ? "on" : "off")}\n", true);
+            panel.WriteText($"Реакторы: {(reactorData.status ? "вкл" : "выкл")}\n");
+            panel.WriteText($"Кол-во реакторов:  {reactorData.count}\n", true);
+            panel.WriteText($"Мощность:  {reactorData.power} МВт\n", true);
+            panel.WriteText($"U в реакторах:        {reactorData.uraniumAmount:0.##} кг\n", true);
+            panel.WriteText($"Авто-режим:       {(autoMode ? "вкл" : "выкл")}\n", true);
             panel.WriteText("-----------------------\n", true);
-            panel.WriteText($"Battery charge: {batteryData.percentage}%\n", true);
-            panel.WriteText($"Battery count:  {batteryData.count}\n", true);
-            panel.WriteText($"Battery status: {(batteryData.isCharging ? "charge" : "drain")}\n", true);
-            panel.WriteText($"{(batteryData.isCharging ? "Charge rate:" : "Drain rate: ")}     { batteryData.powerRate}%\n", true);
+            panel.WriteText($"Заряд: {batteryData.percentage}%\n", true);
+            panel.WriteText($"Кол-во:  {batteryData.count}\n", true);
+            panel.WriteText($"Статус: {(batteryData.isCharging ? "зарядка" : "разрядка")}\n", true);
+            panel.WriteText($"{(batteryData.isCharging ? "Эффективность заряда:" : "Эффективность разряда: ")}     { batteryData.powerRate}%\n", true);
         }
 
         void SwitchReactors(bool state)
